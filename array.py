@@ -51,7 +51,12 @@ print(remove_element(arr, 70), 'remove element')
 #Searching: search an element in an array
 print(arr.index(40)) #searching an element in an array
 
-#Linear SearchL This is the simplest search algorithm. In this type of search, a sequential search is made over all elements one by one until the desired element is found or search reaches the end of the elements.
+#Linear Search: This is the simplest search algorithm. In this type of search, a sequential search is made over all elements one by one until the desired element is found or search reaches the end of the elements.
+
+##TIME COMPLEXITY: 0(N)
+##SPACE COMPLEXITY: 0(1)
+## When not to use: When the array is sorted, or a large number of elements are there in the array.
+
 def linear_search(array, num):
 #using while loop
     i = 0
@@ -71,3 +76,13 @@ def linear_search_for_loop(array, num):
 print(linear_search(arr, 40))
 print(linear_search_for_loop(arr, 60))
 print(arr)
+#Question: Given an array of strings, find the index of a given string.
+
+def find_word(arr, str):
+    for i in range(len(arr)):
+        if(arr[i] == str):
+            return i
+    return f'{str} is not found in the array'
+
+str_array = ['apple, banana, cherry, date, elderberry']
+print(find_word(str_array, 'cherry'))
