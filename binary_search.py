@@ -70,3 +70,16 @@ def sqr_root(num):
     return result
 print(sqr_root(16))
 
+def find_smallest_of_target(arr, number):
+    left = 0
+    right = len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] >= number:
+            return arr[mid]
+        elif arr[mid] < number:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return 'not found'
+print(find_smallest_of_target([2, 4, 6, 8, 10], 2))
