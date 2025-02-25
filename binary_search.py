@@ -39,3 +39,18 @@ def binary_search(arr, num):
 arr = [9, 12, 17, 21, 25, 29, 37]
 
 print(binary_search(arr, 25))
+
+# Recursive Binary Search
+def recursive_binary_search(arr, left, right, number):
+    mid = (left + right) //2
+    if(left > right):
+        return f'{number} not found'
+    elif arr[mid] == number:
+        return f'{number} found at index {mid}' 
+    elif arr[mid] < number:
+        return recursive_binary_search(arr, mid + 1, right, number)
+    else:
+        return recursive_binary_search(arr, left, mid -1, number)
+    
+print('recursive', recursive_binary_search(arr, 0, len(arr)-1, 71))
+
