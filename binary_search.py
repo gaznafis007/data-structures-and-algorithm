@@ -87,16 +87,18 @@ print(find_smallest_of_target([2, 4, 6, 8, 10], 2))
 #Find the rotation count of a rotated sorted array
 def find_rotation_count(arr):
     left = 0;
-    right = len(arr)
+    right = len(arr) - 1
     while left <= right:
         mid = (left + right) // 2
         print(mid, 'mid')
-        if(arr[mid] < arr[mid - 1]):
+        if(arr[left] <= arr[right]):
+            return left
+        if(mid > 0 and arr[mid] < arr[mid - 1]):
             return mid
-        elif(arr[mid] > arr[mid - 1]):
+        if(arr[mid] >= arr[left]):
+            left = mid + 1
+        else:
             right = mid - 1
-        elif mid == 0:
-            return 0
 
 print(find_rotation_count([0, 1, 2, 3, 4, 5, 6, 7]))
 print(find_rotation_count([4, 5, 6, 7, 0, 1, 2]))
