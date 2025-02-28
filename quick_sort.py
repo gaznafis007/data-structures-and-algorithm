@@ -7,7 +7,7 @@ def quick_sort(arr):
     pivot = arr[0]
     left = [z for z in arr[1:] if z <= pivot]
     right = [z for z in arr[1:] if z > pivot]
-    print(left, pivot, right)
+    # print(left, pivot, right)
     return quick_sort(left) + [pivot] + quick_sort(right)
 
 
@@ -26,3 +26,15 @@ def floating_quick_sort(arr):
     return floating_quick_sort(left) + [pivot] + floating_quick_sort(right)
 
 print(floating_quick_sort([3.92, 0.76, 7.24, 1, 4.54, 6.21, 0.12, 9.87, 3.45]))
+
+#reverse sort
+def reverse_quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[-1]
+    left = [x for x in arr[:-1] if x >= pivot]
+    right = [x for x in arr[:-1] if x < pivot]
+
+    return reverse_quick_sort(left) + [pivot] + reverse_quick_sort(right)
+
+print(reverse_quick_sort(array), 'reverse')
