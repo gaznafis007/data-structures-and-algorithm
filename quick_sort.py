@@ -38,10 +38,16 @@ def reverse_quick_sort(arr):
 # print(reverse_quick_sort(array), 'reverse')
 
 #Find the kth smallest element in an unsorted array using Quick Sort.
-def sort(arr):
-    if(len(arr) <=1):
+def custom_sort(arr):
+    if(len(arr) <= 1):
         return arr
+
     pivot = arr[0]
-    left = [x for x in arr if x <= pivot]
-    right = [x for x in arr if x > pivot]
-    return sort(left) + [pivot] + sort(right)
+    left = [x for x in arr[1:] if x <= pivot]
+    right = [x for x in arr[1:] if x > pivot]
+
+    return custom_sort(left) + [pivot] + custom_sort(right)
+
+# print(custom_sort(array))
+
+print('bat'>'ball')
